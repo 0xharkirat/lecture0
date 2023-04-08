@@ -6,8 +6,13 @@ WINDOW_HEIGHT = 780
 VIRTUAL_WIDTH = 432
 VIRTUAL_HEIGHT = 243
 
+PADDLE_SPEED = 200
+
 function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
+
+    math.randomseed(os.time())
+
 
     smallFont = love.graphics.newFont('font.ttf', 8)
 
@@ -19,6 +24,11 @@ function love.load()
         vsync = true
 
     })
+
+    player1Y = 30
+    player2Y = VIRTUAL_HEIGHT - 50
+
+    
 end
 
 function love.keypressed(key)
